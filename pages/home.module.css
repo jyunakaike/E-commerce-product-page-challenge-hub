@@ -1,0 +1,39 @@
+.homeContainer{
+    /* background-color: salmon; */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr ; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 50px; */
+}
+
+.homePictures{
+    display: flex;
+        flex-direction: column;
+    gap: 10px;
+    padding: 10%;
+    background-color: salmon;
+
+}
+
+.image{
+    border-radius: 15px;
+}
+
+.thumbImages{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+    
+}
+
+.thumbImage{
+    border-radius: 15px;    
+}
+
+
+
+
+.homeArticles{}
