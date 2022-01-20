@@ -1,20 +1,25 @@
 .homeContainer{
     /* background-color: salmon; */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr ; */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 50px; */
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    /* display: flex;
+        justify-content: space-between;
+        align-items: center; */
+    padding: 0% 10% 0% 10%;
 }
 
+/* left side */
 .homePictures{
     display: flex;
         flex-direction: column;
     gap: 10px;
     padding: 10%;
-    background-color: salmon;
+    /* background-color: salmon; */
+    width: 100%;
+        max-width: 525px;
+        min-width: 400px;
 
+ 
 }
 
 .image{
@@ -26,14 +31,61 @@
         justify-content: space-between;
         align-items: center;
         gap: 10px;
-    
 }
 
 .thumbImage{
     border-radius: 15px;    
 }
 
+/* right side */
+.homeArticles{
+    display: flex;
+        flex-direction: column;
+    gap: 25px;
+    padding: 10%;
+    /* background-color: gray; */
+    width: 100%;
+        max-width: 525px;
+        min-width: 400px;
+}
 
+.company{
+    color: hsl(26, 100%, 55%);
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 10%;
+}
 
+.title{
+    font-size: 5rem;
+}
+.prices{
+    display: flex;
+        flex-direction: column;
+}
 
-.homeArticles{}
+.priceContainer{
+    display: flex;
+        justify-content: flex-start;
+        align-items: center;
+}
+.price{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.buttonContainer{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+.toggleButton{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    background-color: gray;
+    width: 100px;
+    height: 50px;
+}
