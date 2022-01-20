@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './home.module.css'
+
+// components
+import ModalContainer from '../modal'
 
 
 // Images
@@ -15,9 +18,13 @@ import product_3thumb from '../images/image-product-3-thumbnail.jpg'
 import product_4thumb from '../images/image-product-4-thumbnail.jpg'
 
 const Home = () => {
-    // const imageClick =()=> {
-    //     console.log('clicked')
-    // }
+
+    const [Open, setOpen] = useState(false);
+    
+    const imageClick =()=> {
+        setOpen(true)
+        console.log('clicked')
+    }
     return (
         <section className={styles.homeContainer}>
             <div className={styles.homePictures} >
@@ -27,6 +34,7 @@ const Home = () => {
                     alt="Sneakers product"
                     width={500}
                     height={500}
+                    onClick={() => imageClick()}
                 />
                 <div className={styles.thumbImages}>
                     <Image
@@ -71,13 +79,13 @@ const Home = () => {
                     durable rubber outer sole, they’ll withstand everything the weather can offer.
                 </p>
                 <div className={styles.prices}>
-                        
-                        <div className={styles.priceContainer} >
-                            <div className={styles.price}>$125</div>
-                            <div>50%</div>
-                        </div>
-                        <div>$250</div>
-                    
+
+                    <div className={styles.priceContainer} >
+                        <div className={styles.price}>$125</div>
+                        <div>50%</div>
+                    </div>
+                    <div>$250</div>
+
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
@@ -88,6 +96,15 @@ const Home = () => {
                     <button> Add to cart</button>
                 </div>
             </article>
+
+            {Open && (
+                <ModalContainer
+                    // {...props}
+                    setOpen={setOpen}
+                // data={data}
+                // setData={setData}
+                />
+            )}
         </section>
     );
 };
