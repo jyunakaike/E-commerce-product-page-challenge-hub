@@ -25,12 +25,10 @@ const Home = () => {
     
     const getProduct = () => {
         console.log(product_1);
-
     }
 
     const openModal =()=> {
         setOpen(true)
-        // console.log('clicked')
     }
 
 
@@ -106,11 +104,8 @@ const Home = () => {
 
             {Open && (
                 <ModalContainer
-                    // {...props}
                     setOpen={setOpen}
                     product={product}
-                // data={data}
-                // setData={setData}
                 />
             )}
         </section>

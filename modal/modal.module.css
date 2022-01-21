@@ -11,13 +11,11 @@
     background-color: rgba(0,0,0,0.7);
 }
 .modal {
-  /* background: #ffff; */
   display: flex;
     flex-direction: column;
   gap: 10px;
   width: 800px;
   height: 800px;
-  /* border-radius: 15px; */
   padding: 10%;
   z-index: 100;
 }
@@ -35,7 +33,13 @@
       justify-content: space-between;
       align-items: center;
       gap: 10px;
+  
 }
 .thumbImage{
-  border-radius: 15px;    
+  border-radius: 15px;  
+}
+
+.thumbImageOpacity{
+  border-radius: 15px;
+  opacity: 0.5;  
 }
