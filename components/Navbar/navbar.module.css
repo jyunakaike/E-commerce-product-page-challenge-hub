@@ -1,11 +1,12 @@
 .headerContainer{
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     justify-content: space-between;
     /* justify-content: left;
     padding: 20px 40px 20px 40px;
     */
-    padding: 40px 100px 40px 100px;
+    padding: 20px 100px 20px 100px;
+    border-bottom: 2px solid;
 }
 .titleContainer{
     display: flex;

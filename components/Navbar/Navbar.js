@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className={style.headerContainer} >
             {/* This is Navbar */}
             <div className={style.titleContainer}>
-                <Image src={Logo} ></Image>
+                <Image src={Logo}  width={160} height={40} ></Image>
                 <div className={style.categoryContainer} >
                     <div>Collections</div>
                     <div>Men </div>
