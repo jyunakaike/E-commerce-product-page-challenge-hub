@@ -1,3 +1,16 @@
+
+.root{
+    --Orange: hsl(26, 100%, 55%);
+    --PaleOrange: hsl(25, 100%, 94%);
+
+    --Veryvarkblue: hsl(220, 13%, 13%);
+    --DarkGrayishBlue: hsl(219, 9%, 45%);
+    --GrayishBlue: hsl(220, 14%, 75%);
+    --LightGrayishBlue: hsl(223, 64%, 98%);
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+}
+
 .homeContainer{
     /* background-color: salmon; */
     display: grid;
@@ -80,10 +93,36 @@
 
 .toggleButton{
     display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
     
-    background-color: gray;
-    width: 100px;
+    background-color: hsl(223, 64%, 98%);
+    width: 120px;
     height: 50px;
+    border-radius: 15px;
+}
+.removeItem{
+    background-color: gray;
+}
+
+.addItem{
+    background-color: gray;
+}
+
+.toggleNumber{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.addCartButton{
+    background-color:hsl(26, 100%, 55%);
+    width: 260px;
+    height: 50px;
+    border-radius: 15px;
+    color: hsl(0, 0%, 100%); 
+    font-weight: bold;
+
+    display: flex;
+        justify-content: space-evenly;
+        align-items: center;
 }

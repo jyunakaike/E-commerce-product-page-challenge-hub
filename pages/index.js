@@ -7,6 +7,9 @@ import ModalContainer from '../modal'
 
 // Images
 import Image from 'next/image';
+
+import addCart from '../images/icon-cart.svg'
+
 import product_1 from '../images/image-product-1.jpg'
 import product_2 from '../images/image-product-2.jpg'
 import product_3 from '../images/image-product-3.jpg'
@@ -17,19 +20,37 @@ import product_2thumb from '../images/image-product-2-thumbnail.jpg'
 import product_3thumb from '../images/image-product-3-thumbnail.jpg'
 import product_4thumb from '../images/image-product-4-thumbnail.jpg'
 
+import minus from '../images/icon-minus.svg'
+import plus from '../images/icon-plus.svg'
+
 const Home = () => {
 
-    const product = [product_1,product_2,product_3,product_4]
-    
+    const product = [product_1, product_2, product_3, product_4]
     const [Open, setOpen] = useState(false);
-    
+    const [item, setItem] = useState(0);
+
+
+    const addItem = () => {
+        setItem(item = item + 1)
+    }
+
+    const removeItem = () => {
+        {
+            (item > 0)
+            ? setItem(item = item - 1) : item
+        }
+    }
+
+
     const getProduct = () => {
         console.log(product_1);
     }
 
-    const openModal =()=> {
+    const openModal = () => {
         setOpen(true)
     }
+
+
 
 
     return (
@@ -94,11 +115,14 @@ const Home = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
-                        <div>+</div>
-                        <div>3</div>
-                        <div>+</div>
+                        <div className={styles.removeItem} onClick={removeItem} ><Image src={minus}  /></div>
+                        <div className={styles.toggleNumber}>{item}</div>
+                        <div className={styles.addItem} onClick={addItem}><Image src={plus} /></div>
                     </div>
-                    <button> Add to cart</button>
+                    <button className={styles.addCartButton}>
+                        <Image src={addCart} />
+                        Add to cart
+                    </button>
                 </div>
             </article>
 
