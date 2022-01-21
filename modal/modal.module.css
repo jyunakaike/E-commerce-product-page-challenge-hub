@@ -12,12 +12,21 @@
 }
 .modal {
   display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
   gap: 10px;
   width: 800px;
   height: 800px;
   padding: 10%;
   z-index: 100;
+}
+.buttonClose{
+  display: flex;
+    justify-content: flex-end;
+  width: 100%;
+  padding: 0 0 10px 0;
+
 }
 .image{
   border-radius: 15px;
@@ -34,9 +43,10 @@
       align-items: center;
       gap: 10px;
   
+  
 }
 .thumbImage{
-  border-radius: 15px;  
+  border-radius: 15px;
 }
 
 .thumbImageOpacity{

@@ -4,6 +4,8 @@ import style from './modal.module.css';
 
 import Image from 'next/image';
 
+import closeIcon from '../images/icon-close.svg'
+
 import product_1thumb from '../images/image-product-1-thumbnail.jpg'
 import product_2thumb from '../images/image-product-2-thumbnail.jpg'
 import product_3thumb from '../images/image-product-3-thumbnail.jpg'
@@ -13,7 +15,7 @@ export default function ModalContainer({ setOpen, product }) {
     const [productImage, setProductImage] = useState(product[0]);
     const [opacity, setOpacity] = useState('thumb1');
 
-    const id = ['thumb1','thumb2','thumb3','thumb4']
+    const id = ['thumb1', 'thumb2', 'thumb3', 'thumb4']
 
     function close() {
         setOpen(false);
@@ -32,23 +34,33 @@ export default function ModalContainer({ setOpen, product }) {
     return ReactDOM.createPortal(
         <React.Fragment>
             <div className={style.overlay}>
-                <button onClick={close} >Close</button>
-                <div className={style.modal}>
+                <div className={style.modal} >
+                    <div className={style.buttonClose} >
+                        {/* <button  onClick={close} > */}
+                            <Image
+                                src={closeIcon}
+                                width={30}
+                                height={30}
+                                onClick={close}
+                            />
+                        {/* </button> */}
+                    </div>
+
                     <div>
-                    <Image
-                        className={style.image}
-                        src={productImage}
-                        height={1000}
-                        width={1000}
-                    />
+                        <Image
+                            className={style.image}
+                            src={productImage}
+                            height={1000}
+                            width={1000}
+                        />
 
                     </div>
-                    
+
                     <div className={style.thumbImages}>
                         <Image
                             // className={style.thumbImage}
                             // className={(!opacity) ? style.thumbImage :style.thumbImageOpacity  }
-                            className={(opacity === id[0])? style.thumbImage :style.thumbImageOpacity}
+                            className={(opacity === id[0]) ? style.thumbImage : style.thumbImageOpacity}
                             src={product_1thumb}
                             alt="Sneakers product"
                             width={100}
@@ -59,7 +71,7 @@ export default function ModalContainer({ setOpen, product }) {
                         <Image
                             // className={style.thumbImage}
                             // className={(!opacity) ? style.thumbImage : style.thumbImageOpacity}
-                            className={(opacity === id[1])? style.thumbImage :style.thumbImageOpacity}
+                            className={(opacity === id[1]) ? style.thumbImage : style.thumbImageOpacity}
                             src={product_2thumb}
                             alt="Sneakers product"
                             width={100}
@@ -71,8 +83,8 @@ export default function ModalContainer({ setOpen, product }) {
                             // className={style.thumbImage}
 
                             // className={(!opacity) ? style.thumbImage : style.thumbImageOpacity}
-                            className={(opacity === id[2])? style.thumbImage :style.thumbImageOpacity}
-                            
+                            className={(opacity === id[2]) ? style.thumbImage : style.thumbImageOpacity}
+
                             src={product_3thumb}
                             alt="Sneakers product"
                             width={100}
@@ -83,7 +95,7 @@ export default function ModalContainer({ setOpen, product }) {
                         <Image
                             // className={style.thumbImage}
                             // className={(!opacity) ? style.thumbImage : style.thumbImageOpacity}
-                            className={(opacity === id[3])? style.thumbImage :style.thumbImageOpacity}
+                            className={(opacity === id[3]) ? style.thumbImage : style.thumbImageOpacity}
                             src={product_4thumb}
                             alt="Sneakers product"
                             width={100}
