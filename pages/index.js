@@ -8,9 +8,9 @@ import ModalContainer from '../modal'
 // Images
 import Image from 'next/image';
 import product_1 from '../images/image-product-1.jpg'
-// import product_2 from '../images/image-product-2.jpg'
-// import product_3 from '../images/image-product-3.jpg'
-// import product_4 from '../images/image-product-4.jpg'
+import product_2 from '../images/image-product-2.jpg'
+import product_3 from '../images/image-product-3.jpg'
+import product_4 from '../images/image-product-4.jpg'
 
 import product_1thumb from '../images/image-product-1-thumbnail.jpg'
 import product_2thumb from '../images/image-product-2-thumbnail.jpg'
@@ -19,12 +19,21 @@ import product_4thumb from '../images/image-product-4-thumbnail.jpg'
 
 const Home = () => {
 
+    const product = [product_1,product_2,product_3,product_4]
+    
     const [Open, setOpen] = useState(false);
     
-    const imageClick =()=> {
-        setOpen(true)
-        console.log('clicked')
+    const getProduct = () => {
+        console.log(product_1);
+
     }
+
+    const openModal =()=> {
+        setOpen(true)
+        // console.log('clicked')
+    }
+
+
     return (
         <section className={styles.homeContainer}>
             <div className={styles.homePictures} >
@@ -34,7 +43,7 @@ const Home = () => {
                     alt="Sneakers product"
                     width={500}
                     height={500}
-                    onClick={() => imageClick()}
+                    onClick={() => openModal()}
                 />
                 <div className={styles.thumbImages}>
                     <Image
@@ -43,9 +52,7 @@ const Home = () => {
                         alt="Sneakers product"
                         width={100}
                         height={100}
-                        onClick={() => {
-                            imageClick()
-                        }}
+                        onClick={getProduct}
                     />
                     <Image
                         className={styles.thumbImage}
@@ -101,6 +108,7 @@ const Home = () => {
                 <ModalContainer
                     // {...props}
                     setOpen={setOpen}
+                    product={product}
                 // data={data}
                 // setData={setData}
                 />
