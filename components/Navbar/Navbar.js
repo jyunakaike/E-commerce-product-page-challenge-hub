@@ -1,5 +1,6 @@
-import React from 'react';
-import style from './navbar.module.css'
+import React, {useContext} from 'react';
+import style from './navbar.module.css';
+import AppContext from '../../context/AppContext';
 
 
 
@@ -9,6 +10,10 @@ import checkout from '../../images/icon-cart.svg'
 import profile from '../../images/image-avatar.png'
 
 const Navbar = () => {
+    const {cartItem , setCartItem } =useContext(AppContext)
+
+
+
     return (
         <div className={style.headerContainer} >
             {/* This is Navbar */}
@@ -24,6 +29,7 @@ const Navbar = () => {
             </div>
             <div className={style.cartProfile}>
                 <Image src={checkout} />
+                {(cartItem > 0) ? cartItem : null}
                 <Image src={profile} height={30} width={30} />
 
             </div>

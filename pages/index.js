@@ -1,5 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import styles from './home.module.css'
+
+// Context
+import AppContext from '../context/AppContext';
 
 // components
 import ModalContainer from '../modal'
@@ -29,9 +32,7 @@ const Home = () => {
     const [Open, setOpen] = useState(false);
     const [item, setItem] = useState(0);
 
-
-
-
+    const {cartItem , setCartItem } =useContext(AppContext)
 
     // const getProduct = () => {
     //     console.log(product_1);
@@ -55,7 +56,9 @@ const Home = () => {
     }
 
     const addToCart = () => {
-        console.log(`add to cart ${item} ` );
+        // console.log(`add to cart ${item} ` );
+        setCartItem(cartItem=item)
+        console.log(cartItem);
     }
 
     return (
