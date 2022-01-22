@@ -1,0 +1,113 @@
+/* @import 'vars'; */
+
+.Menu{
+    width: 380px;
+    height: 300px;
+    background-color: white;
+    /* border: 1px solid var(--very-light-pink); */
+    /* border: 1px solid; */
+    border-radius: 6px;
+    padding: 20px 20px 0 20px;
+    position: absolute;
+    top: 80px;
+    right: 184px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.Title{
+    display: flex;
+        justify-content: flex-start;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.separator{
+    border-bottom: solid 1px;
+    padding-bottom: 10px;
+}
+
+/* .container{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    padding: 10px;
+    height: 100px;
+    font-size: 2rem;
+} */
+
+.container{
+    display: flex;
+        flex-direction: column;
+    padding: 10px;
+    height: 150px;
+    font-size: 1.5rem;        
+}
+
+.containerDetail {
+    display: flex;
+        justify-content: space-between;
+    padding-bottom: 20px;
+
+}
+
+.buttonCheckout{
+    background-color:hsl(26, 100%, 55%);
+    border: 0;
+    border-radius: 3px;
+    width: auto;
+    color: white;
+    height: 50px;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+.Detail{
+    display: flex;
+        flex-direction: column;
+}
+.DetailInfo{
+    padding: 5px;
+}
+
+/* .Menu {
+	width: 100px;
+	height: auto;
+	border: 1px solid var(--very-light-pink);
+	border: 1px solid;
+    border-radius: 6px;
+	padding: 20px 20px 0 20px;
+	position: absolute;
+	top: 60px;
+	right: 50px;
+} */
+/* .Menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.Menu ul li {
+	text-align: end;
+}
+.Menu ul li:nth-child(1),
+.Menu ul li:nth-child(2) {
+	font-weight: bold;
+} */
+
+/* .Menu ul li:last-child {
+	padding-top: 20px;
+	border-top: 1px solid var(--very-light-pink);
+    border-top: 1px solid 
+}
+.Menu ul li:last-child a {
+	color: var(--hospital-green);
+    color: green;
+	font-size: var(--sm);
+}
+.Menu ul li a {
+	color: var(--back);
+    color: black;
+	text-decoration: none;
+	margin-bottom: 20px;
+	display: inline-block;
+} */
