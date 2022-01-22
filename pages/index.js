@@ -30,6 +30,19 @@ const Home = () => {
     const [item, setItem] = useState(0);
 
 
+
+
+
+    // const getProduct = () => {
+    //     console.log(product_1);
+    // }
+
+    const openModal = () => {
+        setOpen(true)
+    }
+
+    // cart function
+
     const addItem = () => {
         setItem(item = item + 1)
     }
@@ -37,21 +50,13 @@ const Home = () => {
     const removeItem = () => {
         {
             (item > 0)
-            ? setItem(item = item - 1) : item
+                ? setItem(item = item - 1) : item
         }
     }
 
-
-    const getProduct = () => {
-        console.log(product_1);
+    const addToCart = () => {
+        console.log(`add to cart ${item} ` );
     }
-
-    const openModal = () => {
-        setOpen(true)
-    }
-
-
-
 
     return (
         <section className={styles.homeContainer}>
@@ -71,7 +76,7 @@ const Home = () => {
                         alt="Sneakers product"
                         width={100}
                         height={100}
-                        onClick={getProduct}
+                    // onClick={getProduct}
                     />
                     <Image
                         className={styles.thumbImage}
@@ -115,11 +120,13 @@ const Home = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
-                        <div className={styles.removeItem} onClick={removeItem} ><Image src={minus}  /></div>
+                        <div className={styles.removeItem} onClick={removeItem} ><Image src={minus} /></div>
                         <div className={styles.toggleNumber}>{item}</div>
                         <div className={styles.addItem} onClick={addItem}><Image src={plus} /></div>
                     </div>
-                    <button className={styles.addCartButton}>
+
+
+                    <button className={styles.addCartButton} onClick={ addToCart }>
                         <Image src={addCart} />
                         Add to cart
                     </button>
