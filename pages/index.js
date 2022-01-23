@@ -123,9 +123,9 @@ const Home = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
-                        <div className={styles.removeItem} onClick={removeItem} ><Image src={minus} /></div>
+                        <div  onClick={removeItem} ><Image src={minus} /></div>
                         <div className={styles.toggleNumber}>{item}</div>
-                        <div className={styles.addItem} onClick={addItem}><Image src={plus} /></div>
+                        <div  onClick={addItem}><Image src={plus} /></div>
                     </div>
 
 

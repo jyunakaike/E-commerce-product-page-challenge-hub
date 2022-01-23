@@ -11,6 +11,7 @@
     position: absolute;
     top: 80px;
     right: 184px;
+    color: black;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
 }
 
@@ -23,7 +24,7 @@
 }
 
 .separator{
-    border-bottom: solid 1px;
+    border-bottom: 1px ridge hsl(216, 17%, 72%);
     padding-bottom: 10px;
 }
 
@@ -42,6 +43,16 @@
     padding: 10px;
     height: 150px;
     font-size: 1.5rem;        
+}
+
+.emptyContainer{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    padding: 10px;
+    height: 150px;
+    font-size: 1.5rem;
 }
 
 .containerDetail {

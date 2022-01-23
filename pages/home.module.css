@@ -101,13 +101,7 @@
     height: 50px;
     border-radius: 15px;
 }
-.removeItem{
-    background-color: gray;
-}
 
-.addItem{
-    background-color: gray;
-}
 
 .toggleNumber{
     font-size: 2rem;

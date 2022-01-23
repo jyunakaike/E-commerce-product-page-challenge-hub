@@ -1,5 +1,4 @@
 import React from 'react';
-// import '@styles/Menu.scss';
 import style from './CartMenu.module.css'
 
 import Image from 'next/image';
@@ -25,7 +24,7 @@ const Menu = ({ cartItem }) => {
                     ? (
                         <div className={style.container}>
                             <div className={style.containerDetail} >
-                                <Image src={productImage} height={50} width={50} style="border-radius: 6px;" />
+                                <Image src={productImage} height={50} width={50}  />
                                 <div className={style.Detail}>
                                     <div className={style.DetailInfo} >
                                         Fall Limited Edition Sneaker
@@ -43,7 +42,7 @@ const Menu = ({ cartItem }) => {
                         </div>
 
                     )
-                    : <div className={style.container}>
+                    : <div className={style.emptyContainer}>
                         Your Cart is empty.
                     </div>
             }
