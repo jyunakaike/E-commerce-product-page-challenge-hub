@@ -25,6 +25,13 @@ const Navbar = () => {
         setCategory(category=num)
     }
 
+    const [hoverProfile, sethoverProfile] = useState(false);
+    const hoverProfileChange = (hoverbool) => {
+        sethoverProfile = (hoverProfile = hoverbool)
+        console.log('entra o sale');
+        console.log(hoverbool);
+    }
+
     return (
         <nav className={style.headerContainer} >
             {/* This is Navbar */}
@@ -41,7 +48,10 @@ const Navbar = () => {
             <div className={style.cartProfile}>
                 <Image src={checkout} width={30} height={30} onClick={handleToggleCart} />
                 {(cartItem > 0) ? cartItem : null}
-                <Image src={profile} height={30} width={30} />
+                {/* <div className={(hoverProfile) ? style.profileHover : null}> */}
+                {/* <div className={style.profileHover} > */}
+                    <Image  className={style.profileHover}  src={profile} height={40} width={40} onMouseEnter={()=> hoverProfileChange(true)} onMouseLeave={()=>hoverProfileChange(false)}  />
+                {/* </div> */}
             </div>
             {showCart && <CartMenu  cartItem={cartItem} />}
             

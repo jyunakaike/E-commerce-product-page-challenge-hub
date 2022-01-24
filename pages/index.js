@@ -1,4 +1,4 @@
-import React, { useState,useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import styles from './home.module.css'
 
 // Context
@@ -28,12 +28,17 @@ import plus from '../images/icon-plus.svg'
 
 const Home = () => {
 
-    const product = [product_1, product_2, product_3, product_4]
-    const [Open, setOpen] = useState(false);
-    const [item, setItem] = useState(0);
+    const product = [product_1, product_2, product_3, product_4] // product array for modal, changeMainImage 
 
-    const {cartItem , setCartItem } =useContext(AppContext)
+    const { cartItem, setCartItem } = useContext(AppContext) // context of cart 
+    const [Open, setOpen] = useState(false); //for modal    
+    const [item, setItem] = useState(0); //add to cart 
+    const [thumb, setThumb] = useState(product[0]); // change Main image 
+    const [hoverIndicator, setHoverIndicator] = useState(0); //hover 
+    const [clicked, setClicked] = useState(1); //clicked 
+    
 
+    // open Modal
     const openModal = () => {
         setOpen(true)
     }
@@ -42,18 +47,30 @@ const Home = () => {
     const addItem = () => {
         setItem(item = item + 1)
     }
-
     const removeItem = () => {
         {
             (item > 0)
                 ? setItem(item = item - 1) : item
         }
     }
-
+    // add to cart
     const addToCart = () => {
         // console.log(`add to cart ${item} ` );
-        setCartItem(cartItem=item)
-        console.log(cartItem);
+        setCartItem(cartItem = item)
+        // console.log(cartItem);
+    }
+
+    //  Change Main image
+    const changeImage = (num) => {
+        setThumb(thumb = product[num - 1])
+        setClicked(num)
+    }
+    // hover 
+    const hoverImage =(num)=> {
+        setHoverIndicator( hoverIndicator = num)
+    }
+    const hoverImage1 =()=> {
+        setHoverIndicator( hoverIndicator = 0)
     }
 
     return (
@@ -61,41 +78,53 @@ const Home = () => {
             <div className={styles.homePictures} >
                 <Image
                     className={styles.image}
-                    src={product_1}
+                    src={thumb}
                     alt="Sneakers product"
                     width={500}
                     height={500}
                     onClick={() => openModal()}
                 />
                 <div className={styles.thumbImages}>
-                    <Image
-                        className={styles.thumbImage}
+                    <Image 
+                        className={(hoverIndicator ===1 || clicked ===1 ) ? styles.thumbImageOpacity:styles.thumbImage } 
                         src={product_1thumb}
                         alt="Sneakers product"
                         width={100}
                         height={100}
-                    // onClick={getProduct}
+                        onClick={() => changeImage(1)}
+                        onMouseEnter={()=>hoverImage(1)}
+                        onMouseLeave={hoverImage1}
                     />
+
                     <Image
-                        className={styles.thumbImage}
+                        className={(hoverIndicator ===2  || clicked ===2  ) ? styles.thumbImageOpacity:styles.thumbImage }
                         src={product_2thumb}
                         alt="Sneakers product"
                         width={100}
                         height={100}
+                        onClick={() => changeImage(2)}
+                        onMouseEnter={()=>hoverImage(2)}
+                        onMouseLeave={hoverImage1}
                     />
                     <Image
-                        className={styles.thumbImage}
+                        className={(hoverIndicator ===3 || clicked ===3 ) ? styles.thumbImageOpacity:styles.thumbImage }
                         src={product_3thumb}
                         alt="Sneakers product"
                         width={100}
                         height={100}
+                        onClick={() => changeImage(3)}
+                        onMouseEnter={()=>hoverImage(3)}
+                        onMouseLeave={hoverImage1}
                     />
                     <Image
-                        className={styles.thumbImage}
+                        className={(hoverIndicator ===4 || clicked ===4 ) ? styles.thumbImageOpacity:styles.thumbImage }
                         src={product_4thumb}
                         alt="Sneakers product"
                         width={100}
                         height={100}
+                        onClick={() => changeImage(4)}
+                        onMouseEnter={()=>hoverImage(4)}
+                        onMouseLeave={hoverImage1}
                     />
                 </div>
             </div>
@@ -117,14 +146,14 @@ const Home = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
-                        <div  onClick={removeItem} ><Image src={minus} /></div>
+                        <div onClick={removeItem} ><Image src={minus} /></div>
                         <div className={styles.toggleNumber}>{item}</div>
-                        <div  onClick={addItem}><Image src={plus} /></div>
+                        <div onClick={addItem}><Image src={plus} /></div>
                     </div>
 
 
-                    <button className={styles.addCartButton} onClick={ addToCart }>
-                        <Image src={addCart}  />
+                    <button className={styles.addCartButton} onClick={addToCart}>
+                        <Image src={addCart} />
                         <p>Add to cart</p>
                     </button>
                 </div>

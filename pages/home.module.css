@@ -32,6 +32,9 @@
 .image{
     border-radius: 15px;
 }
+.imageOpacity{
+    opacity:1.5 ;
+} 
 
 .thumbImages{
     display: flex;
@@ -43,6 +46,15 @@
 .thumbImage{
     border-radius: 15px;    
 }
+.thumbImageOpacity{
+    opacity: 0.5;
+    /* mix-blend-mode: luminosity; */
+    border-radius: 15px; 
+} 
+.thumbImagecontainer{
+    background-color: gray;
+}
+
 
 /* right side */
 .homeArticles{
