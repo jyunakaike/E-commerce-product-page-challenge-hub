@@ -11,7 +11,7 @@ import ModalContainer from '../modal'
 // Images
 import Image from 'next/image';
 
-import addCart from '../images/icon-cart.svg'
+import addCart from '../images/icon-cartWhite.svg'
 
 import product_1 from '../images/image-product-1.jpg'
 import product_2 from '../images/image-product-2.jpg'
@@ -34,16 +34,11 @@ const Home = () => {
 
     const {cartItem , setCartItem } =useContext(AppContext)
 
-    // const getProduct = () => {
-    //     console.log(product_1);
-    // }
-
     const openModal = () => {
         setOpen(true)
     }
 
     // cart function
-
     const addItem = () => {
         setItem(item = item + 1)
     }
@@ -103,7 +98,6 @@ const Home = () => {
                         height={100}
                     />
                 </div>
-
             </div>
             <article className={styles.homeArticles}>
                 <div className={styles.company}>SNEAKER COMPANY</div>
@@ -115,10 +109,10 @@ const Home = () => {
                 <div className={styles.prices}>
 
                     <div className={styles.priceContainer} >
-                        <div className={styles.price}>$125</div>
-                        <div>50%</div>
+                        <div className={styles.price}>$125.00</div>
+                        <div className={styles.sale} >50%</div>
                     </div>
-                    <div>$250</div>
+                    <div className={styles.prevPrice}>$250</div>
 
                 </div>
                 <div className={styles.buttonContainer}>
@@ -130,8 +124,8 @@ const Home = () => {
 
 
                     <button className={styles.addCartButton} onClick={ addToCart }>
-                        <Image src={addCart} />
-                        Add to cart
+                        <Image src={addCart}  />
+                        <p>Add to cart</p>
                     </button>
                 </div>
             </article>

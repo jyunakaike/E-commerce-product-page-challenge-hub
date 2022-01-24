@@ -12,13 +12,10 @@
 }
 
 .homeContainer{
-    /* background-color: salmon; */
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    /* display: flex;
-        justify-content: space-between;
-        align-items: center; */
-    padding: 0% 10% 0% 10%;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+    padding: 5% 10% 0% 10%;
 }
 
 /* left side */
@@ -26,8 +23,7 @@
     display: flex;
         flex-direction: column;
     gap: 10px;
-    padding: 10%;
-    /* background-color: salmon; */
+    /* padding: 10%; */
     width: 100%;
         max-width: 525px;
         min-width: 400px;
@@ -51,25 +47,26 @@
 /* right side */
 .homeArticles{
     display: flex;
-        flex-direction: column;
+    flex-direction: column;
+    grid-gap: 25px;
     gap: 25px;
-    padding: 10%;
+    padding: 5%;
     /* background-color: gray; */
     width: 100%;
-        max-width: 525px;
-        min-width: 400px;
+    max-width: 555px;
+    min-width: 400px;
 }
 
 .company{
     color: hsl(26, 100%, 55%);
     font-size: 2rem;
-    font-weight: bold;
     padding-top: 10%;
 }
 
 .title{
-    font-size: 5rem;
+    font-size: 4rem;
 }
+
 .prices{
     display: flex;
         flex-direction: column;
@@ -79,10 +76,32 @@
     display: flex;
         justify-content: flex-start;
         align-items: center;
+        gap: 10px;
+    padding-bottom: 10px;
 }
+
 .price{
     font-size: 3rem;
     font-weight: bold;
+}
+
+.sale{
+    background-color: hsl(25, 100%, 94%);
+    border-radius: 6px;
+    width: 40px;
+    height: 25px;
+    display:grid;
+        place-items: center;
+    font-weight: bold;
+    color: hsl(26, 100%, 55%);
+    font-size: 1.5rem;
+}
+
+.prevPrice{
+    font-size: 1.5rem;
+    font-weight: bold;    
+    color:  hsl(220, 14%, 75%);
+    text-decoration: line-through;
 }
 
 .buttonContainer{
@@ -102,7 +121,6 @@
     border-radius: 15px;
 }
 
-
 .toggleNumber{
     font-size: 2rem;
     font-weight: bold;
@@ -112,11 +130,19 @@
     background-color:hsl(26, 100%, 55%);
     width: 260px;
     height: 50px;
-    border-radius: 15px;
+    border: none;
+    border-radius: 8px;
     color: hsl(0, 0%, 100%); 
     font-weight: bold;
+    box-shadow: hsl(26, 100%, 55%) 0px 25px 20px -20px;
 
     display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
 }
+
+.addCartButton > p {
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+
