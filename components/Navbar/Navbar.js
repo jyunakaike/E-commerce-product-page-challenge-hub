@@ -56,8 +56,9 @@ const Navbar = () => {
                 </div>
                 <Image className={style.profileHover} src={profile} height={40} width={40} onMouseEnter={() => hoverProfileChange(true)} onMouseLeave={() => hoverProfileChange(false)} />
             </div>
-            {showCart && <CartMenu cartItem={cartItem} setCartItem={setCartItem} />}
+            {showCart && <CartMenu cartItem={cartItem} setCartItem={setCartItem} />}    
         </nav>
+        
     )
 };
 

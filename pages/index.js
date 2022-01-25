@@ -76,6 +76,7 @@ const Home = () => {
     return (
         <section className={styles.homeContainer}>
             <div className={styles.homePictures} >
+
                 <Image
                     className={styles.image}
                     src={thumb}
@@ -84,6 +85,7 @@ const Home = () => {
                     height={500}
                     onClick={() => openModal()}
                 />
+
                 <div className={styles.thumbImages}>
                     <Image
                         className={(hoverIndicator === 1 || clicked === 1) ? styles.thumbImageOpacity : styles.thumbImage}
@@ -127,6 +129,7 @@ const Home = () => {
                         onMouseLeave={hoverImage1}
                     />
                 </div>
+
             </div>
             <article className={styles.homeArticles}>
                 <div className={styles.company}>SNEAKER COMPANY</div>
@@ -141,7 +144,7 @@ const Home = () => {
                         <div className={styles.price}>$125.00</div>
                         <div className={styles.sale} >50%</div>
                     </div>
-                    <div className={styles.prevPrice}>$250</div>
+                    <div className={styles.prevPrice}>$250.00</div>
 
                 </div>
                 <div className={styles.buttonContainer}>
@@ -150,8 +153,6 @@ const Home = () => {
                         <div className={styles.toggleNumber}>{item}</div>
                         <span onClick={addItem}><Image src={plus} /></span>
                     </div>
-
-
                     <button className={styles.addCartButton} onClick={addToCart}>
                         <Image src={addCart} />
                         <p>Add to cart</p>

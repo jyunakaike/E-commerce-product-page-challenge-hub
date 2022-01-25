@@ -1,4 +1,3 @@
-
 .Menu{
     width: 380px;
     height: 300px;
@@ -83,4 +82,93 @@
 .bold{
     font-weight: bold;
     padding-left: 5px;
+}
+
+@media (max-width: 375px) {
+    .Menu{
+        width: 380px;
+        height: 300px;
+        background-color: white;
+        border-radius: 6px;
+        padding: 20px 20px 0 20px;
+        position: absolute;
+        top: 120px;
+        left: 80px;
+        color: black;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        z-index: 2;
+    }
+
+    .Title{
+        display: flex;
+            justify-content: flex-start;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 2rem;
+    }
+
+    .separator{
+        border-bottom: 1px ridge hsl(216, 17%, 72%);
+        padding-bottom: 10px;
+    }
+
+    .container{
+        display: flex;
+            flex-direction: column;
+        padding: 10px;
+        height: 150px;
+        font-size: 1.5rem;        
+    }
+
+    .emptyContainer{
+        display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        padding: 10px;
+        height: 150px;
+        font-size: 1.5rem;
+    }
+
+    .containerDetail {
+        display: flex;
+            justify-content: space-between;
+        padding-bottom: 20px;
+    }
+
+    .deleteIconContainer{
+        display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+
+    .buttonCheckout{
+        background-color:hsl(26, 100%, 55%);
+        border: 0;
+        border-radius: 3px;
+        width: auto;
+        color: white;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 6px;
+    }
+
+    .Detail{
+        display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+    }
+
+    .priceContainer{
+        display: flex;
+            flex-direction: row;
+    }
+    .DetailInfo{
+        padding: 5px;
+    }
+
+    .bold{
+        font-weight: bold;
+        padding-left: 5px;
+    }    
 }
