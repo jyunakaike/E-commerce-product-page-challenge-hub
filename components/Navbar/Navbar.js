@@ -46,11 +46,13 @@ const Navbar = () => {
                 </div>
             </div>
             <div className={style.cartProfile}>
-                <Image src={checkout} onClick={handleToggleCart} />
-                {(cartItem > 0) ? <div className={style.cartItemNumber}>{cartItem}</div> : null}
+                <div className={style.cartIcon} >
+                    <Image src={checkout} height={40} width={40} onClick={handleToggleCart} />
+                    {(cartItem > 0) ? <div className={style.cartItemNumber}>{cartItem}</div> : null}
+                </div>
                 <Image className={style.profileHover} src={profile} height={40} width={40} onMouseEnter={() => hoverProfileChange(true)} onMouseLeave={() => hoverProfileChange(false)} />
             </div>
-            {showCart && <CartMenu cartItem={cartItem} setCartItem={setCartItem}  />}
+            {showCart && <CartMenu cartItem={cartItem} setCartItem={setCartItem} />}
         </nav>
     )
 };

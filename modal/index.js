@@ -4,7 +4,8 @@ import style from './modal.module.css';
 
 import Image from 'next/image';
 
-import closeIcon from '../images/icon-close.svg'
+import closeIcon from '../images/icon-close.svg';
+import nextIcon from '../images/icon-next.svg';
 
 import product_1thumb from '../images/image-product-1-thumbnail.jpg'
 import product_2thumb from '../images/image-product-2-thumbnail.jpg'
@@ -12,24 +13,50 @@ import product_3thumb from '../images/image-product-3-thumbnail.jpg'
 import product_4thumb from '../images/image-product-4-thumbnail.jpg'
 
 export default function ModalContainer({ setOpen, product }) {
-    const [productImage, setProductImage] = useState(product[0]);
-    const [opacity, setOpacity] = useState('thumb1');
+    const id = ['thumb1', 'thumb2', 'thumb3', 'thumb4'] //id thumb
 
-    const id = ['thumb1', 'thumb2', 'thumb3', 'thumb4']
+    const [opacity, setOpacity] = useState(id[0]); // change opacity 
+    const [productImage, setProductImage] = useState(product[0]); // change Image
+    const [IconNumber, setIconNumber] = useState(0); // couunt icon number
 
     function close() {
         setOpen(false);
     }
 
+    const IconNumberOnclick=  (num)=>{
+        setIconNumber(IconNumber =num)
+        changeImage(IconNumber, id[IconNumber])
+
+    } 
+
+    const ChangeImageWithIcon = (Iconbool) => {
+        // console.log(product.length);
+        if (Iconbool) {
+            if (IconNumber === 3) {
+                null
+            }
+            else {
+                setIconNumber(IconNumber = IconNumber + 1)
+                console.log(IconNumber);
+                changeImage(IconNumber, id[IconNumber])
+            }
+        }
+        else {
+            if (IconNumber === 0) {
+                null
+            }
+            else {
+                setIconNumber(IconNumber = IconNumber - 1)
+                console.log(IconNumber);
+                changeImage(IconNumber, id[IconNumber])
+            }
+        }
+    }
+    
     const changeImage = (num, event) => {
         setProductImage(product[num])
-        // setOpacity(true)
-        // event.target.getElementById()
-        console.log(event);
-        setOpacity(event.target.id)
+        setOpacity(event)
     }
-
-
 
     return ReactDOM.createPortal(
         <React.Fragment>
@@ -37,23 +64,34 @@ export default function ModalContainer({ setOpen, product }) {
                 <div className={style.modal} >
                     <div className={style.buttonClose} >
                         {/* <button  onClick={close} > */}
-                            <Image
-                                src={closeIcon}
-                                width={30}
-                                height={30}
-                                onClick={close}
-                            />
+                        <Image
+                            src={closeIcon}
+                            width={30}
+                            height={30}
+                            onClick={close}
+                        />
                         {/* </button> */}
                     </div>
 
-                    <div>
+                    <div className={style.MainImageContainer}>
+                        <div className={style.nextIcon} onClick={() => ChangeImageWithIcon(false)} >
+                            <Image
+                                className={style.reverseIcon}
+                                src={nextIcon}
+                            />
+                        </div>
                         <Image
                             className={style.image}
                             src={productImage}
-                            height={1000}
-                            width={1000}
-                        />
+                            height={500}
+                            width={500}
 
+                        />
+                        <div className={style.nextIcon} onClick={() => ChangeImageWithIcon(true)}>
+                            <Image
+                                src={nextIcon}
+                            />
+                        </div>
                     </div>
 
                     <div className={style.thumbImages}>
@@ -65,8 +103,8 @@ export default function ModalContainer({ setOpen, product }) {
                             alt="Sneakers product"
                             width={100}
                             height={100}
-                            id={id[0]}
-                            onClick={(e) => changeImage(0, e)}
+                            id={id[0]} //thumb1
+                            onClick={() => IconNumberOnclick(0)}
                         />
                         <Image
                             // className={style.thumbImage}
@@ -76,8 +114,8 @@ export default function ModalContainer({ setOpen, product }) {
                             alt="Sneakers product"
                             width={100}
                             height={100}
-                            id={id[1]}
-                            onClick={(e) => changeImage(1, e)}
+                            id={id[1]}//thumb2 
+                            onClick={() => IconNumberOnclick(1)}
                         />
                         <Image
                             // className={style.thumbImage}
@@ -89,8 +127,8 @@ export default function ModalContainer({ setOpen, product }) {
                             alt="Sneakers product"
                             width={100}
                             height={100}
-                            id={id[2]}
-                            onClick={(e) => changeImage(2, e)}
+                            id={id[2]} //thumb3
+                            onClick={() => IconNumberOnclick(2)}
                         />
                         <Image
                             // className={style.thumbImage}
@@ -100,8 +138,8 @@ export default function ModalContainer({ setOpen, product }) {
                             alt="Sneakers product"
                             width={100}
                             height={100}
-                            id={id[3]}
-                            onClick={(e) => changeImage(3, e)}
+                            id={id[3]} //thumb4
+                            onClick={() => IconNumberOnclick(3)}
                         />
                     </div>
                 </div>
