@@ -1,16 +1,13 @@
-
-.root{
+/* .root{
     --Orange: hsl(26, 100%, 55%);
     --PaleOrange: hsl(25, 100%, 94%);
-
     --Veryvarkblue: hsl(220, 13%, 13%);
     --DarkGrayishBlue: hsl(219, 9%, 45%);
     --GrayishBlue: hsl(220, 14%, 75%);
     --LightGrayishBlue: hsl(223, 64%, 98%);
     --White: hsl(0, 0%, 100%);
     --Black: hsl(0, 0%, 0%);
-}
-
+} */
 .homeContainer{
     display: flex;
         justify-content: center;
@@ -157,5 +154,18 @@
 .addCartButton > p {
     padding-left: 10px;
     font-size: 1.5rem;
+}
+
+
+@media (max-width: 375px) {
+    .homeContainer{
+        background-color: black;
+        /* display: flex;
+            justify-content: center;
+            align-items: center;
+        padding: 5% 10% 0% 10%; */
+    }
+
+    
 }
 

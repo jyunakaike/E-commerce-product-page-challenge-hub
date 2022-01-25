@@ -6,6 +6,7 @@ import CartMenu from '../CartMenu'
 
 
 import Image from 'next/image';
+import Menu from '../../images/icon-menu.svg'
 import Logo from '../../images/logo.svg'
 import checkout from '../../images/icon-cart.svg'
 import profile from '../../images/image-avatar.png'
@@ -36,6 +37,9 @@ const Navbar = () => {
         <nav className={style.headerContainer} >
             {/* This is Navbar */}
             <div className={style.titleContainer}>
+                <div className={style.iconMenu}>
+                    <Image  src={Menu}  width={50}  ></Image>
+                </div>
                 <Image src={Logo} width={200} ></Image>
                 <div className={style.categoryContainer} >
                     <div className={(category === 1) ? style.categoryClickedColor : null} onClick={() => categoryClick(1)} >Collections</div>
