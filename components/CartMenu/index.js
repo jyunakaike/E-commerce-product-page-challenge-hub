@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './CartMenu.module.css'
+import style from './cartMenu.module.css'
 
 import Image from 'next/image';
 import productImage from '../../images/image-product-1.jpg'
