@@ -24,21 +24,35 @@
     border-bottom:2px solid orange;
 }
 
+
+.cartIcon{
+    position: relative;
+}
+
 .cartProfile{
     display: flex;
     justify-content: space-evenly;
     align-content: center;
-    width: 160px;
-    height: 40px;
+    width: 152px; 
     color: black;
 }
 
-.profileHover{
-    border: 2px solid orange;
-    border-radius: 44px;
-    height: 40px;
-    width: 40px;
+.cartItemNumber{
+    position: absolute;
+        top: 16px;
+        right: 291px;
+    background-color: hsl(26, 100%, 55%);
+    
+    width: 18px;
+    height: 16px;
+        border-radius: 50%;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
+ 
 
 

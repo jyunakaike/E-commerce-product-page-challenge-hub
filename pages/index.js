@@ -146,9 +146,9 @@ const Home = () => {
                 </div>
                 <div className={styles.buttonContainer}>
                     <div className={styles.toggleButton}  >
-                        <div onClick={removeItem} ><Image src={minus} /></div>
+                        <span onClick={removeItem} ><Image src={minus} /></span>
                         <div className={styles.toggleNumber}>{item}</div>
-                        <div onClick={addItem}><Image src={plus} /></div>
+                        <span onClick={addItem}><Image src={plus} /></span>
                     </div>
 
 
